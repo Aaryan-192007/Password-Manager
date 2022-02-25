@@ -55,7 +55,6 @@ def sign_up():
     up.geometry('250x300')
     up.config(bg='lavender')
     up.resizable(0,0)
-    print("User registration in process... ")
     Label(up, text="Please enter details below",bg='lavender').pack()
     Label(up, text="Username",bg='lavender').pack(pady=20)
     username_entry = Entry(up)
@@ -102,8 +101,6 @@ def login_screen():
             file3 = open(username_a + '.txt', "r")
             verify = file3.read().splitlines()
             if password_a in verify:
-                print(username_a + str(' found'))
-                print(pass_str.get() + '= password generated')
                 my_file.write('-----------------------'+'\n')
                 my_file.write(topic.get()+'\n')
                 my_file.write(pass_str.get() + '\n')
@@ -114,7 +111,6 @@ def login_screen():
 
 
 def save_password():
-    print(pass_str.get())
     up = Toplevel(root)
     up.title("")
     up.geometry("200x200")
@@ -143,7 +139,6 @@ def view_saved_passwords():
         if filename in files_list:
             file1 = open(filename)
             verify = file1.read().splitlines()
-            print(verify)
             if password_a in verify:
                 count = 0
                 xyz = Toplevel(root, bg='alice blue')
@@ -159,7 +154,6 @@ def view_saved_passwords():
                         line = fp.readline()
                         if not line:
                             break
-                        print("Line{}: {}".format(count, line.strip()))
                         mylist.insert(END, line + '\n')
 
     Button(sps,text='Proceed',command=go).pack()
