@@ -1,2 +1,2 @@
 # Password-Manager
-A simple yet powerfull password manager made in python
+A simple yet powerful password manager made in python
